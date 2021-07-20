@@ -1,0 +1,11 @@
+.piano {
+    margin-top: 2pc;
+    display: flex;
+    flex-direction: row;
+}
+
+.nowkey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
