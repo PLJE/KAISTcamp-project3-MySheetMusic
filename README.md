@@ -14,10 +14,12 @@
 > 음원 분석의 정확도를 높이기 위해 onset_threshold를 0.9로 높여주었습니다.
 > piano 소리를 분석하기 위해 pitch_offset을 21로 설정해주었습니다. 따라서 이 프로그램으로는 피아노 소리만을 MIDI note로 올바르게 변환할 수 있습니다.
 
-### main.py 프로젝트를 실행하려면 (음원 분석)
-+ madmom 라이브러리를 설치하기 위해서 [madmom 공식 깃 레포지토리](https://github.com/CPJKU/madmom)를 원하는 폴더에 recursive clone 한다. 
-  - pip install madmom으로는 최신 버전의 madmom을 다운받을 수 없는 경우도 있으니 (필자의 경우가 그러했다.) 안전하게 깃을 통해 다운받자.
-  - [madmom documentation : install-from-source](https://madmom.readthedocs.io/en/latest/installation.html#install-from-source) 을 따라하면 된다.
+```
+main.py 프로젝트를 실행하려면 (음원 분석)
+madmom 라이브러리를 설치하기 위해서 [madmom 공식 깃 레포지토리](https://github.com/CPJKU/madmom)를 원하는 폴더에 recursive clone 한다. 
+pip install madmom으로는 최신 버전의 madmom을 다운받을 수 없는 경우도 있으니 (필자의 경우가 그러했다.) 안전하게 깃을 통해 다운받자.
+[madmom documentation : install-from-source](https://madmom.readthedocs.io/en/latest/installation.html#install-from-source) 을 따라하면 된다.
+```
 
 - Sheet music rendering     
 > 악보는 'vexflow' 모듈을 이용하여 , react js 에서 렌더링합니다.   
