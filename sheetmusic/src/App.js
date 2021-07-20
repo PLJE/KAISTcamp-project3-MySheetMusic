@@ -79,7 +79,12 @@ export default function App()
       var first = true;
       // 받은 데이터 parsing
       for(var i=0;i<Object.keys(res.data).length ;i++){
-        var note = MIDINOTE[res.data['note'+String(i)]['code']];
+
+        var note;
+        if (48 <= res.data['note'+String(i)]['code'] && res.data['note'+String(i)]['code'] <= 83)
+          note = MIDINOTE[res.data['note'+String(i)]['code']];
+        else 
+          note = 'B4/q/r';
 
         var beftime;
         var nowtime;
@@ -91,7 +96,11 @@ export default function App()
         if (i+1 < Object.keys(res.data).length) afttime = res.data['note'+String(i+1)]['second'];
         else afttime = -1;
 
-        if (beftime === -1 && (afttime - nowtime) <= 0.03) { // 시작부터 화음인 경우
+        if (beftime === -1 && afttime === -1) {
+          tmp = note + "/q";
+          first = false;
+        }
+        else if (beftime === -1 && (afttime - nowtime) <= 0.03) { // 시작부터 화음인 경우
           tmp = "(" + note;
         }
         else if ( ((nowtime - beftime) > 0.03) && (afttime - nowtime) <= 0.03) { // 그냥 화음의 시작 
